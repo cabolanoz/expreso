@@ -16,6 +16,7 @@ To start the API and PostgreSQL database using Docker:
 
 ```bash
 docker compose up --build -d
+```
 
 ---
 
