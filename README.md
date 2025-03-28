@@ -18,6 +18,41 @@ To start the API and PostgreSQL database using Docker:
 docker compose up --build -d
 ```
 
+This will:
+
+- Start the PostgreSQL database
+- Build and run the Go API (in api/)
+- Create tables automatically via GORM
+
+✅ [Visit: http://localhost:8080](http://localhost:8080)
+
+---
+
+## ⚙️ Environment Configuration
+
+Create a .env file inside the api/ folder:
+
+```bash
+PORT=8080
+DB_HOST=db
+DB_PORT=5432
+DB_USER=postgres
+DB_PASSWORD=postgres
+DB_NAME=expreso
+JWT_SECRET=supersecretkey
+```
+
+You can copy the default template:
+```bash
+cp api/.env.example api/.env
+```
+
+---
+
+## 📘 Subproject Docs
+
+- [api/README.md](./api/README.md) – API setup, structure, and endpoints
+
 ---
 
 ## 🧑‍💻 Authors

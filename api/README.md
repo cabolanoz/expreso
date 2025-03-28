@@ -21,7 +21,7 @@ Expreso is a ride-sharing API built in Go using Gin and PostgreSQL.
 - [Docker](https://www.docker.com/)
 - [Docker Compose](https://docs.docker.com/compose/)
 
-### Folder Structure
+### 📂 Folder Structure
 
 ```bash
 api/
@@ -32,3 +32,4 @@ api/
 ├── utils/                 # Helper functions (e.g. env)
 ├── .env.example           # Environment template
 └── Dockerfile             # Builds the Go app
+```
