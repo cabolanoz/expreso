@@ -33,13 +33,12 @@ This will:
 Create a .env file inside the api/ folder:
 
 ```bash
-PORT=8080
-DB_HOST=db
-DB_PORT=5432
-DB_USER=postgres
-DB_PASSWORD=postgres
-DB_NAME=expreso
-JWT_SECRET=supersecretkey
+PORT=
+DB_HOST=
+DB_PORT=
+DB_USER=
+DB_PASSWORD=
+DB_NAME=
 ```
 
 You can copy the default template:

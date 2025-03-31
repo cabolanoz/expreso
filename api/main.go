@@ -8,6 +8,7 @@ import (
 
 	"expreso-api/config"
 	"expreso-api/models"
+	"expreso-api/routes"
 	"expreso-api/utils"
 )
 
@@ -15,16 +16,17 @@ func main() {
 	_ = godotenv.Load()
 
 	config.ConnectDB()
-	config.DB.AutoMigrate(&models.User{})
+	config.DB.AutoMigrate(&models.User{}, &models.Car{})
 
 	port := utils.GetEnv("PORT", "8080")
 
 	r := gin.Default()
 
-	r.GET("/", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "Welcome to Expreso API 👋",
-		})
+	// Register routes
+	routes.RegisterUserRoutes(r)
+
+	r.GET("/api/v1/", func(c *gin.Context) {
+		c.String(200, "Welcome to Expreso API 😄")
 	})
 
 	log.Println("Server running on port", port)
