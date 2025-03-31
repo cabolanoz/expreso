@@ -16,7 +16,7 @@ func main() {
 	_ = godotenv.Load()
 
 	config.ConnectDB()
-	config.DB.AutoMigrate(&models.User{}, &models.Car{})
+	config.DB.AutoMigrate(&models.Admin{}, &models.User{}, &models.Car{})
 
 	port := utils.GetEnv("PORT", "8080")
 
