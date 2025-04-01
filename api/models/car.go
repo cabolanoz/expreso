@@ -5,7 +5,7 @@ import (
 )
 
 type Car struct {
-	gorm.Model
+	gorm.Model     `swaggerignore:"true"`
 	UserId  uint   `json:"user_id"`
 	Make    string `json:"make"`
 	Pattern string `json:"pattern"` // e.g. "Toyota" - This is replacement for "model"

@@ -1,3 +1,8 @@
+// @title Expreso API
+// @version 1.0
+// @description This is the backend API for Expreso.
+// @host localhost:8080
+// @BasePath /api/v1
 package main
 
 import (
@@ -10,6 +15,10 @@ import (
 	"expreso-api/models"
 	"expreso-api/routes"
 	"expreso-api/utils"
+
+	_ "expreso-api/docs"
+	ginSwagger "github.com/swaggo/gin-swagger"
+	swaggerFiles "github.com/swaggo/files"
 )
 
 func main() {
@@ -28,6 +37,7 @@ func main() {
 	r.GET("/api/v1/", func(c *gin.Context) {
 		c.String(200, "Welcome to Expreso API 😄")
 	})
+	r.GET("/api/v1/docs/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	log.Println("Server running on port", port)
 	r.Run(":" + port)

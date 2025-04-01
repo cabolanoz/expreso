@@ -5,7 +5,7 @@ import (
 )
 
 type User struct {
-	gorm.Model
+	gorm.Model   `swaggerignore:"true"`
 	Name         string `json:"name"`
 	Email        string `gorm:"unique" json:"email"`
 	PhoneNumber  string `json:"-"`
